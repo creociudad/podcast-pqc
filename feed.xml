@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtd/podcast-1.0.dtd">
+  <channel>
+    <title>Pa Qué Carajos!? - Podcast</title>
+    <link>https://pqc.creociudad.org</link>
+    <description>Pa Qué Carajos!? es un podcast de reflexiones sarcásticas y humorísticas con Nicolás Sánchez Salazar.</description>
+    <language>es</language>
+    <itunes:author>Nicolás Sánchez Salazar</itunes:author>
+    <itunes:subtitle>Reflexiones y humor sin filtros.</itunes:subtitle>
+    <itunes:summary>Un espacio para ver la realidad sin tapujos, con un toque sarcástico y humorístico.</itunes:summary>
+    <itunes:image href="https://pqc.creociudad.org/logo.png" />
+    <itunes:category text="Sociedad & Cultura">
+      <itunes:category text="Política" />
+    </itunes:category>
+
+    <!-- Episodios -->
+    <item>
+      <title>Episodio 1: El Gran Despropósito</title>
+      <link>https://pqc.creociudad.org/episodio1</link>
+      <description>En este episodio hablamos de los grandes desaciertos políticos de la actualidad...</description>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 GMT</pubDate>
+      <enclosure url="https://pqc.creociudad.org/episodios/episodio1.mp3" length="12345678" type="audio/mp3" />
+      <itunes:duration>00:30:00</itunes:duration>
+      <itunes:explicit>No</itunes:explicit>
+    </item>
+
+    <item>
+      <title>Episodio 2: La Comedia del Poder</title>
+      <link>https://pqc.creociudad.org/episodio2</link>
+      <description>Un análisis sarcástico sobre cómo el poder político se convierte en un espectáculo...</description>
+      <pubDate>Mon, 08 Jan 2024 00:00:00 GMT</pubDate>
+      <enclosure url="https://pqc.creociudad.org/episodios/episodio2.mp3" length="12345678" type="audio/mp3" />
+      <itunes:duration>00:35:00</itunes:duration>
+      <itunes:explicit>No</itunes:explicit>
+    </item>
+
+    <!-- Más episodios pueden ser agregados aquí siguiendo el mismo formato -->
+  </channel>
+</rss>
