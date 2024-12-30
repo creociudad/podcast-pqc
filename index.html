@@ -14,10 +14,8 @@
 
     <section id="episodios">
         <h2>Episodios Recientes</h2>
-        <ul>
-            <li><a href="#">Episodio 1: Introducción al Podcast</a></li>
-            <li><a href="#">Episodio 2: El Rol de los Jóvenes en la Sociedad</a></li>
-            <!-- Agrega más episodios según sea necesario -->
+        <ul id="episodios-lista">
+            <!-- Los episodios se cargarán aquí dinámicamente desde el Feed RSS -->
         </ul>
     </section>
 
@@ -43,6 +41,45 @@
         document.addEventListener('DOMContentLoaded', function() {
             alert('¡Bienvenido a Voces & Visiones!');  // Mostrar mensaje de bienvenida
         });
+
+        // URL del archivo RSS de Voces & Visiones
+        const rssUrl = 'https://voces.creociudad.org/feed.xml';  // Cambia esta URL si es necesario
+
+        // Función para obtener el feed RSS
+        async function getRss() {
+            const response = await fetch(rssUrl);
+            const xml = await response.text();
+
+            // Crear un DOMParser para convertir el XML en un objeto legible
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xml, 'application/xml');
+
+            // Obtener los elementos del feed
+            const items = xmlDoc.getElementsByTagName('item');
+            const episodesList = document.getElementById('episodios-lista');
+            
+            // Limpiar el contenedor antes de agregar los episodios
+            episodesList.innerHTML = '';
+
+            // Iterar sobre los episodios y agregarlos a la página
+            for (let i = 0; i < items.length; i++) {
+                const item = items[i];
+                const title = item.getElementsByTagName('title')[0].textContent;
+                const link = item.getElementsByTagName('link')[0].textContent;
+                const pubDate = item.getElementsByTagName('pubDate')[0].textContent;
+
+                const episodeElement = document.createElement('li');
+                episodeElement.classList.add('episodio');
+                episodeElement.innerHTML = `
+                    <a href="${link}" target="_blank">${title}</a>
+                    <p><strong>Fecha:</strong> ${pubDate}</p>
+                `;
+                episodesList.appendChild(episodeElement);
+            }
+        }
+
+        // Llamar a la función al cargar la página
+        getRss();
     </script>
 </body>
 </html>
